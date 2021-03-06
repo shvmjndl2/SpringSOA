@@ -1,0 +1,10 @@
+public class GetRecentRecord {
+    
+      @AuraEnabled
+    public static List <Account> fetchAccounts() {
+        //Qyery 10 accounts 
+        // we can use field set to get fields dynamically
+       return [SELECT Id, Name, BillingState,Website, Phone, Industry, Type from Account order by CreatedDate desc LIMIT 10];
+    }
+    
+}
